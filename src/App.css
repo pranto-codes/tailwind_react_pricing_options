@@ -1,0 +1,8 @@
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #312e81;
+}

@@ -1,42 +1,25 @@
-import { Suspense } from "react";
-import "./App.css";
-import DaisyNav from "./components/DaisyNav/DaisyNav";
 import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import Benefits from "./components/Benefits/Benefits";
 import PricingOptions from "./components/PricingOptions/PricingOptions";
-import ResultChart from "./components/ResultChart/ResultChart";
-import axios from "axios";
-import MarksChart from "./components/MarksChart/MarksChart";
+import FAQ from "./components/FAQ/FAQ";
+import Footer from "./components/Footer/Footer";
 
-const pricingPromise = fetch("pricingData.json").then((res) => res.json());
-
-const marksPromise = axios.get("marksData.json");
+import "./App.css";
 
 function App() {
   return (
     <>
-      <header>
-        {" "}
-        <DaisyNav></DaisyNav>
-        <Navbar></Navbar>
-      </header>
+      <Navbar />
 
       <main>
-        <Suspense
-          fallback={
-            <span className="loading loading-spinner loading-lg"></span>
-          }
-        >
-          <PricingOptions pricingPromise={pricingPromise}></PricingOptions>
-        </Suspense>
-        <Suspense
-          fallback={
-            <span className="loading loading-spinner loading-lg"></span>
-          }
-        >
-          <MarksChart marksPromise={marksPromise}></MarksChart>
-        </Suspense>
-        <ResultChart></ResultChart>
+        <Hero />
+        <Benefits />
+        <PricingOptions />
+        <FAQ />
       </main>
+
+      <Footer />
     </>
   );
 }

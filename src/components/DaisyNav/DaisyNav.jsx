@@ -23,7 +23,7 @@ const DaisyNav = () => {
           </button>
         </div>
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Subscription</a>
         </div>
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
